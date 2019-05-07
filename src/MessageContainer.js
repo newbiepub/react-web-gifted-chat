@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
   },
   listStyle: {
     flex: 1,
+    flexDirection: "column"
   },
   scrollToBottomStyle: {
     opacity: 0.8,
