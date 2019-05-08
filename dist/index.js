@@ -2207,6 +2207,7 @@ function (_Component) {
       }
 
       return React__default.createElement("div", {
+        className: "web-scroller",
         style: styles$g.container
       }, ListHeaderComponent(), messages.map(this.renderItem), ListFooterComponent());
     }
@@ -2769,7 +2770,8 @@ function (_React$Component) {
       return React__default.createElement("div", {
         style: {
           height: this.state.messagesContainerHeight,
-          display: 'flex'
+          display: 'flex',
+          flexDirection: 'column'
         }
       }, React__default.createElement(MessageContainer, Object.assign({}, this.props, {
         invertibleScrollViewProps: this.invertibleScrollViewProps,

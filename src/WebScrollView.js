@@ -16,7 +16,7 @@ export default class WebScrollView extends Component {
       messages = data.slice().reverse();
     }
     return (
-      <div style={styles.container}>
+      <div className="web-scroller" style={styles.container}>
         {ListHeaderComponent()}
         {messages.map(this.renderItem)}
         {ListFooterComponent()}
