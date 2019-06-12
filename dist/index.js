@@ -1103,13 +1103,16 @@ function (_React$Component) {
         console.log('messageIndex', messageIndex);
       }
 
+      var _currentMessage$media = currentMessage.media_url,
+          thumb = _currentMessage$media.thumb,
+          origin = _currentMessage$media.origin;
       return React__default.createElement(TouchableOpacity, {
         onPress: this.onClickImage,
         style: _objectSpread({}, styles$5.container, containerStyle)
       }, React__default.createElement(ReactNative.Image, Object.assign({}, imageProps, {
         style: [styles$5.image, this.props.imageStyle],
         source: {
-          uri: currentMessage.image
+          uri: thumb
         }
       })), isOpen && React__default.createElement(Lightbox, {
         onCloseRequest: function onCloseRequest() {
@@ -1117,18 +1120,14 @@ function (_React$Component) {
             isOpen: false
           });
         },
-        mainSrc: imageMessages[messageIndex].image,
-        nextSrc: imageMessages[(messageIndex + 1) % imageMessages.length].image,
-        prevSrc: imageMessages[(messageIndex + imageMessages.length - 1) % imageMessages.length].image,
+        mainSrc: origin,
+        nextSrc: null,
+        prevSrc: null,
         onMovePrevRequest: function onMovePrevRequest() {
-          return _this2.setState({
-            messageIndex: (messageIndex + imageMessages.length - 1) % imageMessages.length
-          });
+          return null;
         },
         onMoveNextRequest: function onMoveNextRequest() {
-          return _this2.setState({
-            messageIndex: (messageIndex + 1) % imageMessages.length
-          });
+          return null;
         }
       }));
     }

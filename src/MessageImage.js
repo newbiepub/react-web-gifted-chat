@@ -37,6 +37,9 @@ export default class MessageImage extends React.Component {
     const { imageMessages, currentMessage, imageProps, containerStyle, imageStyle } = this.props;
     const { isOpen, messageIndex } = this.state;
     if (isOpen) { console.log('messageIndex', messageIndex); }
+
+    let { thumb, origin } = currentMessage.media_url;
+
     return (
       <TouchableOpacity
         onPress={this.onClickImage}
@@ -45,22 +48,16 @@ export default class MessageImage extends React.Component {
         <Image
           {...imageProps}
           style={[styles.image, this.props.imageStyle]}
-          source={{ uri: currentMessage.image }}
+          source={{ uri: thumb }}
         />
         {isOpen && (
           <Lightbox
             onCloseRequest={() => this.setState({ isOpen: false })}
-            mainSrc={imageMessages[messageIndex].image}
-            nextSrc={imageMessages[(messageIndex + 1) % imageMessages.length].image}
-            prevSrc={imageMessages[(messageIndex + imageMessages.length - 1) % imageMessages.length].image}
-            onMovePrevRequest={() => this.setState({
-              messageIndex: (messageIndex + imageMessages.length - 1) % imageMessages.length,
-            })
-            }
-            onMoveNextRequest={() => this.setState({
-              messageIndex: (messageIndex + 1) % imageMessages.length,
-            })
-            }
+            mainSrc={origin}
+            nextSrc={null}
+            prevSrc={null}
+            onMovePrevRequest={() => null}
+            onMoveNextRequest={() => null}
 
           />
         )}
