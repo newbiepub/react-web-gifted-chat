@@ -293,10 +293,10 @@ class GiftedChat extends React.Component {
 
   renderMessages() {
     return (
-      <div style={{
+      <div className='fill-parent' style={{
         height: this.state.messagesContainerHeight,
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}>
         <MessageContainer
           {...this.props}
