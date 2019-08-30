@@ -2430,7 +2430,12 @@ var styles$h = ReactNative.StyleSheet.create({
   },
   listStyle: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
   },
   scrollToBottomStyle: {
     opacity: 0.8,
