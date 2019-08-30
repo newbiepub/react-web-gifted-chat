@@ -2772,6 +2772,7 @@ function (_React$Component) {
       var _this2 = this;
 
       return React__default.createElement("div", {
+        className: "fill-parent",
         style: {
           height: this.state.messagesContainerHeight,
           display: 'flex',
